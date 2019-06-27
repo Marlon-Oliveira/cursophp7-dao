@@ -1,0 +1,21 @@
+<?php
+
+class Usuario {
+	
+	private $idusuario;
+	private $deslogin;
+	private $dessenha;
+	private $dtcadastro;
+	
+	
+	public function getIdusuario(){
+		return $this -> idusuario;
+		
+	}
+	
+	
+}
+
+
+
+?>

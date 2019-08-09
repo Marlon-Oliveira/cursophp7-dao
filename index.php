@@ -3,11 +3,36 @@
 
 require_once("config.php");
 
-$data = new Data();
+//carrega um usuário
 
-$usuarios = $data->select("SELECT * FROM tb_usuarios");
+//$marlon = new Usuario();
+//$marlon->loadById(3);
+
+//echo $marlon;
 
 
-echo json_encode($usuarios);
+//carrega uma lista de usuários
+
+
+//$lista = Usuario::getList();
+
+
+
+
+//echo json_encode($lista);
+
+
+//Carrega uma lista de usuário bsucando pelo login
+
+//$search = Usuario::search("jo");
+
+//echo json_encode($search);
+
+//Carrega um usuário usando o login e a senha 
+
+$usuario = new Usuario();
+$usuario->login("marlon", "1234567890");
+
+echo $usuario;
 
 ?>

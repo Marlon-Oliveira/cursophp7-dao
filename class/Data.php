@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 class Data extends PDO {
 	//para conectar no banco
 	private $conn;
@@ -7,20 +10,20 @@ class Data extends PDO {
 	public function __construct(){
 	
 	$this -> conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "");
-	eho "teste";
-	}
 	
-}
+	}
+
 
 	private function setParams($statment, $parameters = array()){
 		
 		foreach ($parameters as $key => $value){
-		
-			$this->setParam($key, $value);
-			
+
+			$this->setParam($statment, $key, $value);
+
 		}
 		
 	}
+
 
 	private function setParam($statment, $key, $value){
 		
@@ -46,10 +49,13 @@ class Data extends PDO {
 	{
 		
 		
-		$stmt = $this->query($rawQuery, $params):
+
+		$stmt = $this->query($rawQuery, $params);
 		
 		
-		return $stmt->fecthAll(PDO:: FETCH_ASSOC);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		
 	}
 	
 	
